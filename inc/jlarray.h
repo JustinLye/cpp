@@ -4,7 +4,7 @@
 #if !defined(__JLYEE_ARRAY_HEADER__)
 #define __JLYEE_ARRAY_HEADER__
 
-namespace lye {
+namespace jl {
 	namespace ds {
 		template<typename Type>
 		class Array {
@@ -33,7 +33,7 @@ namespace lye {
 };
 
 #if !defined(__JLYEE_ARRAY_CPP__)
-#include"../source/jlyee_array.cpp"
+#include"../src/jlarray.cpp"
 #endif
 
 #endif
