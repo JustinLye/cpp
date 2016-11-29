@@ -3,10 +3,8 @@
 #if !defined(__JL_MATH_HEADER__)
 #define __JL_MATH_HEADER__
 namespace jl {
-	namespace math {
-		template<typename T>
-		T mod(const T& dividend, const T& divisor);
-	};
+	template<typename T>
+	T mod(const T& dividend, const T& divisor);
 };
 
 #if !defined(__JL_MATH_CPP__)

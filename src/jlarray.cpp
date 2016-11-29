@@ -6,13 +6,13 @@
 #define __JLYEE_ARRAY_CPP__
 
 template<typename Type>
-jl::ds::Array<Type>::Array(int Size) : _size(Size), _array(nullptr) {
+jl::Array<Type>::Array(int Size) : _size(Size), _array(nullptr) {
 	//allocate memory
 	_array = new Type[_size];
 }
 
 template<typename Type>
-jl::ds::Array<Type>::~Array() {
+jl::Array<Type>::~Array() {
 	if (_array != nullptr) {
 		delete[] _array;
 	}
@@ -22,13 +22,13 @@ jl::ds::Array<Type>::~Array() {
 //Returns total elements in the array.
 //Size is set at construction
 template<typename Type>
-int jl::ds::Array<Type>::size() const { return this->_size; }
+int jl::Array<Type>::size() const { return this->_size; }
 
 //Array.clear()
 //Release all current memory allocated to the array.
 //All elements currently in the array are lost.
 template<typename Type>
-void jl::ds::Array<Type>::clear() {
+void jl::Array<Type>::clear() {
 	if (_array != nullptr) {
 		delete[] _array;
 	}
@@ -36,13 +36,13 @@ void jl::ds::Array<Type>::clear() {
 }
 
 template<typename Type>
-void jl::ds::Array<Type>::fill(const Type& x) {
+void jl::Array<Type>::fill(const Type& x) {
 	for(int i = 0; i < _size; i++)
 		_array[i] = x;
 }
 
 template<typename Type>
-void jl::ds::Array<Type>::resize(int Size) {
+void jl::Array<Type>::resize(int Size) {
 	assert(Size > 0);
 	if(Size == _size)
 		return;
@@ -51,12 +51,12 @@ void jl::ds::Array<Type>::resize(int Size) {
 }
 
 template<typename Type>
-Type& jl::ds::Array<Type>::operator[](int Index) {
+Type& jl::Array<Type>::operator[](int Index) {
 	return _array[Index];
 }
 
 template<typename Type>
-void jl::ds::Array<Type>::print(std::ostream& s) const {
+void jl::Array<Type>::print(std::ostream& s) const {
 	s << "[";
 	for (int i = 0; i < _size-1; i++) {
 		s << _array[i] << ",";
